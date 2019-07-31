@@ -20,7 +20,7 @@ np.load = lambda *a, **k: np_load_old(*a, allow_pickle=True, **k)
 (X_train , y_train), (X_test , y_test) = imdb.load_data(num_words = top_words)
 #reset configs for future usage
 np.load = np_load_old
-#add adding or remove words to make each review 500 tokens long
+#add padding or remove words to make each review 500 tokens long
 max_review_length = 500
 X_train = sequence.pad_sequences(X_train, maxlen = max_review_length)
 X_test = sequence.pad_sequences(X_test, maxlen = max_review_length)
